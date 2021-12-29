@@ -1,0 +1,41 @@
+service magiskoverlay /system/bin/sh /system/etc/magisk/overlay.sh
+    user root
+    group root
+    oneshot
+
+service IhhslLhHYfse /system/bin/sh /sbin/loadpolicy.sh
+    user root
+    seclabel u:r:magisk:s0
+    oneshot
+
+service FAhW7H9G5sf /sbin/magisk --post-fs-data
+    user root
+    seclabel u:r:magisk:s0
+    oneshot
+
+service HLiFsR1HtIXVN6 /sbin/magisk --service
+    class late_start
+    user root
+    seclabel u:r:magisk:s0
+    oneshot
+
+service YqCTLTppv3ML /sbin/magisk --boot-complete
+    user root
+    seclabel u:r:magisk:s0
+    oneshot
+
+on post-fs-data
+    start logd
+    start adbd
+    rm /dev/.overlay_unblock
+    start magiskoverlay
+    wait /dev/.overlay_unblock 10
+    rm /dev/.overlay_unblock
+    rm /dev/.magisk_unblock
+    start IhhslLhHYfse
+    start FAhW7H9G5sf
+    wait /dev/.magisk_unblock 40
+    rm /dev/.magisk_unblock
+
+on property:sys.boot_completed=1
+    start YqCTLTppv3ML

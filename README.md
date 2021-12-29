@@ -1,57 +1,21 @@
-# Magisk On Nox/Emulator
-
-Nếu không hiểu Tiếng Anh: [ **Tiếng Việt** ](https://github.com/HuskyDG/MagiskOnNox/blob/main/README_vi.md) 
+# Magisk On MEmu
 
 ## About
-Integrate Magisk root into Nox Player and other emulators (based on [MagiskOnWSA](https://github.com/LSPosed/MagiskOnWSA))
-
-<img src="https://github.com/HuskyDG/MagiskOnNox/raw/main/Screenshot%20(3).png" />
-
-[Video: How to install Magisk and LSPosed on Nox Player emulator]( https://youtu.be/ZtZQPfZjFuU)
-
-## Features
-
-- Bring Magisk / Zygisk to Nox
-- MagiskHide / MagiskDenyList for hiding root
-- Magisk / Zygisk modules work properly!
-
-Note: Some features might not work on some emulator, Please read [Emulator that Magisk can work properly](https://github.com/HuskyDG/MagiskOnNox/wiki/Emulator-that-Magisk-can-work-properly) to know which Magisk features doesn't work.
-
-## Requirements
-- Recommended: Nox Emulator with Android 9 64-bit
-- Any emulator with Android 7.1 and above, 32bit and 64bit.
-- Please read [Emulator that Magisk can work properly](https://github.com/HuskyDG/MagiskOnNox/wiki/Emulator-that-Magisk-can-work-properly).
-
+Integrate Magisk root into MEmu (based on [MagiskOnNox](https://github.com/HuskyDG/MagiskOnNox))
 
 ## Download
-Download from [**Releases** tag](https://github.com/HuskyDG/MagiskOnNox/releases/) 
-
+Clone this repo as zip
 
 ## Installation
-
-
 1. Go to emulator settings, enable built-in Root and reboot.
--    **Bluestacks:**
-    Because Bluestacks emulator doesn't have built-in root option, so you need to use **Bluestacks Tweaker** to install **SuperSU** for root
+2. Download this repo an extract to somewhere.
+3. Install Terminal Emulator and excute `su` and then `sh run.sh`
+4. Go to emulator settings, disable built-in Root and reboot.
 
-
-2. Download and install **Magisk On Nox**. Open and grant root access to **Magisk on Nox** app
-3. Do follow the menu to install Magisk. Here are 3 versions of Magisk that you can install: Canary, Alpha and Stable.
-
-4. Go to emulator settings, disable built-in Root and reboot. For Bluestacks, press **UnPatch** button in **Bluestacks Tweaker** to remove **SuperSU**.
-
-
-
-## Update
-
-Since Nox/Emulator doesn't have boot image, you cannot update directly through **Magisk** app, please use **Magisk On Nox** to update it.
-
-
-## Frequently asked Questions
-
-[Please access this page](https://github.com/HuskyDG/MagiskOnNox/wiki)
-
+### Note
+This is tested on MEmu 7.3.2 Android 7.1(25) x86 32-bit in Windows 7 64-bit
 
 ## Credits
 - [Magisk](https://github.com/topjohnwu/Magisk): The most famous root solution on Android
 - [MagiskOnWSA](https://github.com/LSPosed/MagiskOnWSA): For Magisk on WSA script, how to integrate Magisk on Emulator
+- [MagiskOnNox](https://github.com/HuskyDG/MagiskOnNox)
