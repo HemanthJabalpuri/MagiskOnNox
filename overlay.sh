@@ -77,17 +77,17 @@ for mdir in modules post-fs-data.d service.d; do
 done
 
 for file in magisk32 magisk64 magiskinit; do
-  chmod 755 ./$file
-  cp -af ./$file $MAGISKTMP/$file
-  cp -af ./$file $MAGISKBIN/$file
+  chmod 755 $file
+  cp -af $file $MAGISKTMP/
+  cp -af $file $MAGISKBIN/
 done
-cp -af ./magiskboot $MAGISKBIN/magiskboot
-cp -af ./busybox $MAGISKBIN/busybox
-cp -af ./loadpolicy.sh $MAGISKTMP
+cp -af magiskboot $MAGISKBIN/
+cp -af busybox $MAGISKBIN/
+cp -af loadpolicy.sh $MAGISKTMP
 
-magisk_name="magisk32"
+magisk_name=magisk32
 case "$(getprop ro.product.cpu.abi)" in
-  *64*) magisk_name="magisk64";;
+  *64*) magisk_name=magisk64;;
 esac
 ln -s ./$magisk_name $MAGISKTMP/magisk
 ln -s ./magisk $MAGISKTMP/su
